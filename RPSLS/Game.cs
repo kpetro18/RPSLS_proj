@@ -11,6 +11,7 @@ namespace RPSLS
         //member variables (has a)
         Player playerOne;
         Player playerTwo;
+        List<string> gesturesList = new List<string>(new string[] { "rock", "paper", "scissors", "lizard", "Spock" });
         public int ValidUserInput;
 
 
