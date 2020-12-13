@@ -82,6 +82,14 @@ namespace RPSLS
                 playerTwoGesture = playerTwo.SelectGesture();
                 CompareGesture();
             }
+            if (playerOne.score >= 2)
+            {
+                Console.WriteLine(playerOne.name + " wins the match!!");
+            }
+            else
+            {
+                Console.WriteLine(playerTwo.name + " wins the match!!");
+            }
         }
 
         public void CompareGesture()
