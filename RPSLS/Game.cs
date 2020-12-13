@@ -80,11 +80,86 @@ namespace RPSLS
                 Console.WriteLine("Round: " + currentMatch);
                 playerOneGesture = playerOne.SelectGesture();
                 playerTwoGesture = playerTwo.SelectGesture();
-                //call determine winner method here
+                CompareGesture();
             }
         }
 
+        public void CompareGesture()
+        {
+            if (playerOneGesture == playerTwoGesture)
+            {
+                Console.WriteLine("It's a tie!");
+            }
+            else if (playerOneGesture == "1")
+            {
+                if (playerTwoGesture == "3" || playerTwoGesture == "4")
+                {
+                    Console.WriteLine(playerOne.name + " wins the round!");
+                    playerOne.score += playerOne.score;
+                }
+                else
+                {
+                    Console.WriteLine(playerTwo.name + " wins the round!");
+                    playerTwo.score += playerTwo.score;
+                }
+            }
 
+            else if (playerOneGesture == "2")
+            {
+                if (playerTwoGesture == "1" || playerTwoGesture == "5")
+                {
+                    Console.WriteLine(playerOne.name + " wins the round!");
+                    playerOne.score += playerOne.score;
+                }
+                else
+                {
+                    Console.WriteLine(playerTwo.name + " wins the round!");
+                    playerTwo.score += playerTwo.score;
+                }
+            }
+
+            else if (playerOneGesture == "3")
+            {
+                if (playerTwoGesture == "2" || playerTwoGesture == "4")
+                {
+                    Console.WriteLine(playerOne.name + " wins the round!");
+                    playerOne.score += playerOne.score;
+                }
+                else
+                {
+                    Console.WriteLine(playerTwo.name + " wins the round!");
+                    playerTwo.score += playerTwo.score;
+                }
+            }
+
+            else if (playerOneGesture == "4")
+            {
+                if (playerTwoGesture == "2" || playerTwoGesture == "5")
+                {
+                    Console.WriteLine(playerOne.name + " wins the round!");
+                    playerOne.score += playerOne.score;
+                }
+                else
+                {
+                    Console.WriteLine(playerTwo.name + " wins the round!");
+                    playerTwo.score += playerTwo.score;
+                }
+            }
+
+            else if (playerOneGesture == "5")
+            {
+                if (playerTwoGesture == "1" || playerTwoGesture == "2")
+                {
+                    Console.WriteLine(playerOne.name + " wins the round!");
+                    playerOne.score += playerOne.score;
+                }
+                else
+                {
+                    Console.WriteLine(playerTwo.name + " wins the round!");
+                    playerTwo.score += playerTwo.score;
+                }
+            }
+        }
 
 
         //public void isValid(userInput)
