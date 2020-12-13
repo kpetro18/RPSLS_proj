@@ -10,7 +10,11 @@ namespace RPSLS
     {
         public override string SelectGesture()
         {
-            throw new NotImplementedException();
+            name = "Computer";
+            Random num = new Random();
+            int rand = num.Next(1, 6);
+            string aiSelection = Convert.ToString(rand);
+            return aiSelection;
         }
     }
 }
