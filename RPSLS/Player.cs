@@ -10,7 +10,7 @@ namespace RPSLS
     {
         //member variables (has a)
         public string name;
-        public string score;
+        public int score;
         public List<string> gesturesList = new List<string>(new string[] { "'1' for rock", "'2' for paper", "'3' for scissors", "'4' for lizard", "'5' for Spock" });
 
         //constructor (spawner)

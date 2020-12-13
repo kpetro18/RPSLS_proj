@@ -11,9 +11,9 @@ namespace RPSLS
         //member variables (has a)
         public Player playerOne;
         public Player playerTwo;
-        public int playerOneGesture;
-        public int playerTwoGesture;
-        //List<string> gesturesList = new List<string>(new string[] { "rock", "paper", "scissors", "lizard", "Spock" });
+        public string playerOneGesture;
+        public string playerTwoGesture;
+        public int currentMatch;
 
         //public int ValidUserInput;
 
@@ -73,7 +73,16 @@ namespace RPSLS
             }
         }
 
-
+        public void StartMatch()
+        {
+            while (playerOne.score < 2 && playerTwo.score < 2)
+            {
+                Console.WriteLine("Round: " + currentMatch);
+                playerOneGesture = playerOne.SelectGesture();
+                playerTwoGesture = playerTwo.SelectGesture();
+                //call determine winner method here
+            }
+        }
 
 
 
@@ -92,7 +101,6 @@ namespace RPSLS
         //}
 
 
-        //Console.WriteLine(" Enter '1' for Rock, '2' for Paper, '3' for Scissors, '4' for Lizard, '5' for Spock");
 
 
 

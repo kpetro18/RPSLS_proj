@@ -15,7 +15,7 @@ namespace RPSLS
             Game game = new Game();
             game.Rules();
             game.NumberOfPlayers();
-            game.playerOne.SelectGesture();
+            game.StartMatch();
 
 
 
