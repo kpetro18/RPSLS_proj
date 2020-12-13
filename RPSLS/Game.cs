@@ -9,14 +9,17 @@ namespace RPSLS
     class Game
     {
         //member variables (has a)
-        Player playerOne;
-        Player playerTwo;
-        List<string> gesturesList = new List<string>(new string[] { "rock", "paper", "scissors", "lizard", "Spock" });
-        public int ValidUserInput;
+        public Player playerOne;
+        public Player playerTwo;
+        public int playerOneGesture;
+        public int playerTwoGesture;
+        //List<string> gesturesList = new List<string>(new string[] { "rock", "paper", "scissors", "lizard", "Spock" });
+
+        //public int ValidUserInput;
 
 
         //constructor (spawner)
-
+        
 
 
 
@@ -69,6 +72,11 @@ namespace RPSLS
                     break;
             }
         }
+
+
+
+
+
 
         //public void isValid(userInput)
         //{

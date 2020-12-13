@@ -8,5 +8,9 @@ namespace RPSLS
 {
     class AI : Player
     {
+        public override string SelectGesture()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
