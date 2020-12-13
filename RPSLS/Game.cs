@@ -13,15 +13,9 @@ namespace RPSLS
         public Player playerTwo;
         public string playerOneGesture;
         public string playerTwoGesture;
-        public int currentMatch;
-
-        //public int ValidUserInput;
-
+        public int currentRound = 1;
 
         //constructor (spawner)
-        
-
-
 
         //member methods (can do)
         public void Rules()
@@ -66,21 +60,25 @@ namespace RPSLS
                     playerTwo = new Human();
                     playerTwo.name = Console.ReadLine();
                     break;
+
                 default:
                     Console.WriteLine("Your entry is invalid, please enter '1' or '2'");
                     NumberOfPlayers();  //need to look into incursion(?) to stop the 'method inception'
                     break;
             }
+            Console.Clear();
         }
 
         public void StartMatch()
         {
             while (playerOne.score < 2 && playerTwo.score < 2)
             {
-                Console.WriteLine("Round: " + currentMatch);
+                Console.WriteLine("Round: " + currentRound);
                 playerOneGesture = playerOne.SelectGesture();
                 playerTwoGesture = playerTwo.SelectGesture();
                 CompareGesture();
+                currentRound++;
+                Console.Clear();
             }
             if (playerOne.score >= 2)
             {
@@ -103,12 +101,12 @@ namespace RPSLS
                 if (playerTwoGesture == "3" || playerTwoGesture == "4")
                 {
                     Console.WriteLine(playerOne.name + " wins the round!");
-                    playerOne.score += playerOne.score;
+                    playerOne.score ++;
                 }
                 else
                 {
                     Console.WriteLine(playerTwo.name + " wins the round!");
-                    playerTwo.score += playerTwo.score;
+                    playerTwo.score ++;
                 }
             }
 
@@ -117,12 +115,12 @@ namespace RPSLS
                 if (playerTwoGesture == "1" || playerTwoGesture == "5")
                 {
                     Console.WriteLine(playerOne.name + " wins the round!");
-                    playerOne.score += playerOne.score;
+                    playerOne.score++;
                 }
                 else
                 {
                     Console.WriteLine(playerTwo.name + " wins the round!");
-                    playerTwo.score += playerTwo.score;
+                    playerTwo.score++;
                 }
             }
 
@@ -131,12 +129,12 @@ namespace RPSLS
                 if (playerTwoGesture == "2" || playerTwoGesture == "4")
                 {
                     Console.WriteLine(playerOne.name + " wins the round!");
-                    playerOne.score += playerOne.score;
+                    playerOne.score++;
                 }
                 else
                 {
                     Console.WriteLine(playerTwo.name + " wins the round!");
-                    playerTwo.score += playerTwo.score;
+                    playerTwo.score++;
                 }
             }
 
@@ -145,12 +143,12 @@ namespace RPSLS
                 if (playerTwoGesture == "2" || playerTwoGesture == "5")
                 {
                     Console.WriteLine(playerOne.name + " wins the round!");
-                    playerOne.score += playerOne.score;
+                    playerOne.score++;
                 }
                 else
                 {
                     Console.WriteLine(playerTwo.name + " wins the round!");
-                    playerTwo.score += playerTwo.score;
+                    playerTwo.score++;
                 }
             }
 
@@ -159,16 +157,15 @@ namespace RPSLS
                 if (playerTwoGesture == "1" || playerTwoGesture == "2")
                 {
                     Console.WriteLine(playerOne.name + " wins the round!");
-                    playerOne.score += playerOne.score;
+                    playerOne.score++;
                 }
                 else
                 {
                     Console.WriteLine(playerTwo.name + " wins the round!");
-                    playerTwo.score += playerTwo.score;
+                    playerTwo.score++;
                 }
             }
         }
-
 
         //public void isValid(userInput)
         //{
@@ -182,11 +179,5 @@ namespace RPSLS
         //        throw;
         //    }
         //}
-
-
-
-
-
-
     }
 }

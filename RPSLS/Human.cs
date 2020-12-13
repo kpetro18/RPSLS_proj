@@ -15,7 +15,6 @@ namespace RPSLS
         //member methods (can do)
         public override string SelectGesture()
         {
-            Console.Clear();
             Console.WriteLine(this.name + " Please select your gesture.");
             gesturesList.ForEach(Console.WriteLine);
             //Console.WriteLine(name + " Enter '1' for Rock, '2' for Paper, '3' for Scissors, '4' for Lizard, '5' for Spock");
@@ -27,6 +26,7 @@ namespace RPSLS
             }
             else
             {
+                Console.Clear();
                 Console.WriteLine("Your entry is invalid.");
                 return SelectGesture();
             }
