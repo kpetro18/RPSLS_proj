@@ -9,7 +9,7 @@ namespace RPSLS
     class Game
     {
         //member variables (has a)
-        public Player player; //solely used for the gesturesList in the CompareGestures method so it looks cleaner/didnt want to have to keep track of swapping between playerOne.gesturesList and playerTwo.gesturesList
+        public Human player; //solely used for the gesturesList in the CompareGestures method so it looks cleaner/didnt want to have to keep track of swapping between playerOne.gesturesList and playerTwo.gesturesList
         public Player playerOne;
         public Player playerTwo;
         public string playerOneGesture;
@@ -19,6 +19,7 @@ namespace RPSLS
         //constructor (spawner)
         public Game()
         {
+            player = new Human();
             currentRound = 1;
         }
         //member methods (can do)
@@ -82,6 +83,7 @@ namespace RPSLS
                 playerTwoGesture = playerTwo.SelectGesture();
                 CompareGesture();
                 currentRound++;
+                Console.ReadLine(); // to keep console from clearing too fast after each round
                 Console.Clear();
             }
             if (playerOne.score >= 2)
