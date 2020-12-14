@@ -9,26 +9,59 @@ namespace RPSLS
     class Human : Player
     {
         //member variables (has a)
+        public bool validUserInput;
 
         //constructor (spawner)
+        public Human()
+        {
+            validUserInput = false;
+        }
 
         //member methods (can do)
         public override string SelectGesture()
         {
-            Console.WriteLine(this.name + " Please select your gesture.");
-            gesturesList.ForEach(Console.WriteLine);
-            //Console.WriteLine(name + " Enter '1' for Rock, '2' for Paper, '3' for Scissors, '4' for Lizard, '5' for Spock");
+            DisplayGesturesList();
+            Console.WriteLine(name + " Please select your gesture.");
             string userInput = Console.ReadLine();
+            IsValid(userInput);
 
-            if (userInput == "1" || userInput == "2" || userInput == "3" || userInput == "4" || userInput == "5")
+            if (validUserInput == true)
             {
                 return userInput;
             }
             else
             {
                 Console.Clear();
-                Console.WriteLine("Your entry is invalid.");
+                Console.WriteLine("youre input was invalid");
                 return SelectGesture();
+            }
+            //return userInput;
+
+            //for (int i = 0; i < gesturesList.Count; i++)
+            //{                
+            //}
+        }
+
+        public void IsValid(string userInput)
+        {
+            for (int i = 0; i < gesturesList.Count; i++)
+            {
+                if (userInput == gesturesList[i])
+                {
+                    validUserInput = true;
+                    break;
+                }
+                else
+                {
+                    validUserInput = false;
+                }
+            }
+        }
+        public void DisplayGesturesList()
+        {
+            for (int i = 0; i < gesturesList.Count; i++)
+            {
+                Console.WriteLine(i + " " + gesturesList[i]);
             }
         }
     }

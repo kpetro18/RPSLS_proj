@@ -12,9 +12,8 @@ namespace RPSLS
         {
             name = "Computer";
             Random num = new Random();
-            int rand = num.Next(1, 6);
-            string aiSelection = Convert.ToString(rand);
-            return aiSelection;
+            int rand = num.Next(0, gesturesList.Count);
+            return gesturesList[rand];
         }
     }
 }

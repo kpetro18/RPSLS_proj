@@ -76,7 +76,7 @@ namespace RPSLS
                 Console.WriteLine("Round: " + currentRound);
                 playerOneGesture = playerOne.SelectGesture();
                 playerTwoGesture = playerTwo.SelectGesture();
-                CompareGesture();
+                //CompareGesture();
                 currentRound++;
                 Console.Clear();
             }
@@ -96,7 +96,7 @@ namespace RPSLS
             {
                 Console.WriteLine("It's a tie!");
             }
-            else if (playerOneGesture == "1")
+            else if (playerOneGesture == Player.gesturesList[0])
             {
                 if (playerTwoGesture == "3" || playerTwoGesture == "4")
                 {
@@ -167,17 +167,6 @@ namespace RPSLS
             }
         }
 
-        //public void isValid(userInput)
-        //{
-        //    try
-        //    {
-        //        ValidUserInput = Convert.ToInt32(userInput);
-        //    }
-        //    catch (Exception)
-        //    {
-
-        //        throw;
-        //    }
-        //}
+        
     }
 }
