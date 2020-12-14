@@ -35,11 +35,6 @@ namespace RPSLS
                 Console.WriteLine("youre input was invalid");
                 return SelectGesture();
             }
-            //return userInput;
-
-            //for (int i = 0; i < gesturesList.Count; i++)
-            //{                
-            //}
         }
 
         public void IsValid(string userInput)

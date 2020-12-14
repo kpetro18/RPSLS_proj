@@ -9,14 +9,18 @@ namespace RPSLS
     class Game
     {
         //member variables (has a)
+        public Player player; //solely used for the gesturesList in the CompareGestures method so it looks cleaner/didnt want to have to keep track of swapping between playerOne.gesturesList and playerTwo.gesturesList
         public Player playerOne;
         public Player playerTwo;
         public string playerOneGesture;
         public string playerTwoGesture;
-        public int currentRound = 1;
+        public int currentRound;
 
         //constructor (spawner)
-
+        public Game()
+        {
+            currentRound = 1;
+        }
         //member methods (can do)
         public void Rules()
         {
@@ -76,7 +80,7 @@ namespace RPSLS
                 Console.WriteLine("Round: " + currentRound);
                 playerOneGesture = playerOne.SelectGesture();
                 playerTwoGesture = playerTwo.SelectGesture();
-                //CompareGesture();
+                CompareGesture();
                 currentRound++;
                 Console.Clear();
             }
@@ -90,15 +94,15 @@ namespace RPSLS
             }
         }
 
-        public void CompareGesture()
+        public void CompareGesture() //******************   I WOULD LIKE SOME FEED BACK ON HOW TO DO THIS WITHOUT 'MAGIC NUMBERS' *******************************
         {
             if (playerOneGesture == playerTwoGesture)
             {
                 Console.WriteLine("It's a tie!");
             }
-            else if (playerOneGesture == Player.gesturesList[0])
+            else if (playerOneGesture == player.gesturesList[0])
             {
-                if (playerTwoGesture == "3" || playerTwoGesture == "4")
+                if (playerTwoGesture == player.gesturesList[2] || playerTwoGesture == player.gesturesList[3])
                 {
                     Console.WriteLine(playerOne.name + " wins the round!");
                     playerOne.score ++;
@@ -110,9 +114,9 @@ namespace RPSLS
                 }
             }
 
-            else if (playerOneGesture == "2")
+            else if (playerOneGesture == player.gesturesList[1])
             {
-                if (playerTwoGesture == "1" || playerTwoGesture == "5")
+                if (playerTwoGesture == player.gesturesList[0] || playerTwoGesture == player.gesturesList[4])
                 {
                     Console.WriteLine(playerOne.name + " wins the round!");
                     playerOne.score++;
@@ -124,9 +128,9 @@ namespace RPSLS
                 }
             }
 
-            else if (playerOneGesture == "3")
+            else if (playerOneGesture == player.gesturesList[2])
             {
-                if (playerTwoGesture == "2" || playerTwoGesture == "4")
+                if (playerTwoGesture == player.gesturesList[1] || playerTwoGesture == player.gesturesList[3])
                 {
                     Console.WriteLine(playerOne.name + " wins the round!");
                     playerOne.score++;
@@ -138,9 +142,9 @@ namespace RPSLS
                 }
             }
 
-            else if (playerOneGesture == "4")
+            else if (playerOneGesture == player.gesturesList[3])
             {
-                if (playerTwoGesture == "2" || playerTwoGesture == "5")
+                if (playerTwoGesture == player.gesturesList[1] || playerTwoGesture == player.gesturesList[4])
                 {
                     Console.WriteLine(playerOne.name + " wins the round!");
                     playerOne.score++;
@@ -152,9 +156,9 @@ namespace RPSLS
                 }
             }
 
-            else if (playerOneGesture == "5")
+            else if (playerOneGesture == player.gesturesList[4])
             {
-                if (playerTwoGesture == "1" || playerTwoGesture == "2")
+                if (playerTwoGesture == player.gesturesList[0] || playerTwoGesture == player.gesturesList[1])
                 {
                     Console.WriteLine(playerOne.name + " wins the round!");
                     playerOne.score++;
@@ -165,8 +169,6 @@ namespace RPSLS
                     playerTwo.score++;
                 }
             }
-        }
-
-        
+        }       
     }
 }

@@ -16,6 +16,7 @@ namespace RPSLS
         //constructor (spawner)
         public Player()
         {
+            score = 0;
         }
 
         //member methods (can do)
